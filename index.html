@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Denno Butchery Chokaa | Goat Meat, Chicken &amp; Liver – Order on WhatsApp</title>
+<meta name="description" content="Denno Butchery Chokaa, Nairobi. Goat meat, chicken and liver. Choose your cuts and order directly through WhatsApp for collection or delivery.">
+<meta name="theme-color" content="#0b3d20">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Denno Butchery Chokaa – Order on WhatsApp">
+<meta property="og:description" content="Goat meat, chicken and liver from your local butcher in Chokaa, Nairobi.">
+<!-- After deploying, set og:image to the full https:// address of images/hero.jpg -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 120 120%27%3E%3Ccircle cx=%2760%27 cy=%2760%27 r=%2758%27 fill=%27%23c8102e%27/%3E%3Cg transform=%27rotate(-32 60 60)%27%3E%3Crect x=%2724%27 y=%2736%27 width=%2754%27 height=%2734%27 rx=%275%27 fill=%27%23ffffff%27/%3E%3Crect x=%2776%27 y=%2748%27 width=%2726%27 height=%2711%27 rx=%275.5%27 fill=%27%230b3d20%27/%3E%3C/g%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="images/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="topbar" id="topBar"><span>Get the Denno Butchery app on your phone</span><button type="button" class="btn small topbtn" id="topInstallBtn">Install</button><button type="button" class="topclose" id="topClose" aria-label="Close">&times;</button></div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#home" aria-label="Denno Butchery Chokaa, home"><img class="logo" src="images/logo-mark.jpg" width="46" height="46" alt=""><span class="wm"><b>DENNO</b><i>BUTCHERY CHOKAA</i></span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#meat">Our Meat</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button type="button" class="btn btn-red small" id="navInstall">Get the App</button>
+      <a class="btn btn-wa small" id="navWa" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="ribbon">DENNO BUTCHERY CHOKAA</p>
+      <p class="loc">Chokaa, Nairobi</p>
+      <p class="open-now" id="openStatus">Open daily, 8:00 a.m. to 11:00 p.m.</p>
+      <h1>Fresh Meat. Quality You Can Trust.</h1>
+      <p class="lead">Your local butcher in Chokaa. Choose your favourite cuts and order directly through WhatsApp.</p>
+      <p class="hero-claim"><em>Denno Butchery Chokaa is the only butchery selling goat meat in Chokaa.</em></p>
+      <div class="actions">
+        <a class="btn btn-red" href="#meat">Browse Our Meat</a>
+        <a class="btn btn-wa" id="heroWa" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+        <a class="btn btn-ghost" href="#collection">Find Our Shop</a>
+      </div>
+    </div>
+    <aside class="board" aria-label="Price list">
+      <h2>Price list</h2>
+      <ul>
+        <li><strong>Goat Meat</strong><span class="p">KSh 900/kg</span></li>
+        <li><strong>Chicken</strong><span class="p">KSh 500 per chicken</span></li>
+        <li><strong>Liver</strong><span class="p tbc">Contact us for today's price</span></li>
+      </ul>
+      <small>Final price and availability confirmed on WhatsApp.</small>
+    </aside>
+  </div>
+</section>
+<section class="steps" aria-label="How ordering works">
+  <div class="wrap"><ol>
+    <li><span>1</span>Choose your meat and kilograms</li>
+    <li><span>2</span>Send your order on WhatsApp</li>
+    <li><span>3</span>We confirm price and availability</li>
+  </ol></div>
+</section>
+
+<section class="section" id="meat">
+  <div class="wrap">
+    <h2>Our Meat</h2>
+    <p class="muted">Goat meat is priced per kilogram and chicken per whole chicken. Availability is confirmed by the shop when you order. Photos are for illustration only.</p>
+    <div class="grid" id="products" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="section alt" id="basket">
+  <div class="wrap">
+    <h2>Your Order</h2>
+    <div class="order-layout">
+      <div>
+        <div id="basketEmpty" class="empty">
+          <p>Your basket is empty. Choose a quantity above and select <strong>Add to Order</strong>.</p>
+          <a class="btn btn-red" href="#meat">Browse Our Meat</a>
+        </div>
+        <div id="basketFilled" hidden>
+          <ul class="lines" id="lines"></ul>
+          <div class="totals">
+            <div><span>Estimated subtotal (priced items)</span><strong id="subtotal">KSh 0</strong></div>
+            <p class="note" id="tbcNote" hidden></p>
+            <p class="note">This is an estimate only. The final price, availability and any delivery charge are confirmed by the shop on WhatsApp.</p>
+          </div>
+          <a class="btn btn-ghost dark" href="#meat">Continue shopping</a>
+        </div>
+      </div>
+
+      <form id="orderForm" novalidate>
+        <h3>Checkout</h3>
+        <div class="field">
+          <label for="name">Your name <span class="req">(required)</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" maxlength="60">
+          <p class="err" id="nameErr" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="phone">Contact number <span class="opt">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="e.g. 0712 345 678">
+          <p class="err" id="phoneErr" role="alert"></p>
+        </div>
+        <fieldset class="field">
+          <legend>Collection or delivery</legend>
+          <label class="radio"><input type="radio" name="fulfil" value="Collect from the shop" checked> Collect from the shop</label>
+          <label class="radio"><input type="radio" name="fulfil" value="Request delivery"> Request delivery</label>
+        </fieldset>
+        <div class="field" id="locField" hidden>
+          <label for="location">Delivery location <span class="req">(required)</span></label>
+          <input id="location" name="location" type="text" maxlength="120" placeholder="Area, estate or landmark">
+          <p class="err" id="locErr" role="alert"></p>
+          <p class="note">Delivery is not guaranteed. The shop will confirm availability, charges and timing on WhatsApp.</p>
+        </div>
+        <div class="field">
+          <label for="notes">Notes or cutting instructions <span class="opt">(optional)</span></label>
+          <textarea id="notes" name="notes" rows="3" maxlength="300"></textarea>
+        </div>
+        <p class="err" id="formErr" role="alert"></p>
+        <button type="submit" class="btn btn-wa wide">Send Order on WhatsApp</button>
+        <p class="note" id="sentMsg" role="status"></p>
+        <p class="note">This opens WhatsApp with your order typed out. Your order is not placed until you send the message and the shop confirms it.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap narrow">
+    <h2>About</h2>
+    <p>Denno Butchery Chokaa serves customers in Chokaa, Nairobi. We sell goat meat, chicken and liver, and you can order simply by sending us a message on WhatsApp.</p>
+    <p class="claim"><em>Denno Butchery Chokaa is the only butchery selling goat meat in Chokaa.</em></p>
+  </div>
+</section>
+
+<section class="section alt" id="collection">
+  <div class="wrap narrow">
+    <h2>Collection and Delivery</h2>
+    <div class="two">
+      <div class="info"><h3>Collection</h3><p>Request to collect your order from the shop.</p></div>
+      <div class="info"><h3>Delivery</h3><p>Request delivery to your location. The shop confirms availability, charges and timing.</p></div>
+    </div>
+    <p>We are in Chokaa, Nairobi, Kenya, near the Kilimall office. Contact us if you need help finding the shop.</p>
+    <p class="note">The map and directions point to the Kilimall office in Chokaa, a landmark near the shop.</p>
+    <div class="actions">
+      <a class="btn btn-red" href="https://www.google.com/maps/search/?api=1&amp;query=Kilimall+office%2C+Chokaa%2C+Nairobi%2C+Kenya" target="_blank" rel="noopener">View Chokaa on Google Maps</a>
+      <a class="btn btn-ghost dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=Kilimall+office%2C+Chokaa%2C+Nairobi%2C+Kenya" target="_blank" rel="noopener">Get Directions to Chokaa</a>
+    </div>
+    <div class="map-card"><svg viewBox="0 0 24 24" width="44" height="44" aria-hidden="true"><path fill="#c8102e" d="M12 2C7.6 2 4 5.5 4 9.8 4 15.4 12 22 12 22s8-6.6 8-12.200C20 5.500 16.400 2 12 2z"/><circle cx="12" cy="9.800" r="3.200" fill="#fff"/></svg><p><strong>Chokaa, Nairobi, Kenya</strong><br>Near the Kilimall office. Use the buttons above to open Google Maps.</p></div>
+    <a class="btn btn-red" href="#basket">Go to your order</a>
+  </div>
+</section>
+
+<section class="section dark-sec" id="contact">
+  <div class="wrap narrow">
+    <h2>Contact</h2>
+    <address>
+      <strong>Denno Butchery Chokaa</strong><br>
+      Chokaa, Nairobi, Kenya<br>
+      Near the Kilimall office<br>
+      Open Monday to Sunday, 8:00 a.m. to 11:00 p.m.<br>
+      Phone: <a id="phoneLink" href="tel:+254795410514">0795410514</a>
+    </address>
+    <div class="actions">
+      <a class="btn btn-wa" id="contactWa" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+      <a class="btn btn-red" id="callBtn" href="tel:+254795410514">Call 0795410514</a>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=Kilimall+office%2C+Chokaa%2C+Nairobi%2C+Kenya" target="_blank" rel="noopener">Get Directions</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="install" id="app" aria-label="Get the app">
+  <div class="wrap">
+    <div class="install-in">
+      <div>
+        <h2>Get the Denno Butchery app</h2>
+        <p>Add the shop to your phone's home screen. Open it like an app and order on WhatsApp faster.</p>
+      </div>
+      <button type="button" class="btn btn-red" id="installBtn">Download the App</button>
+    </div>
+    <p class="install-help" id="installHelp" role="status" hidden></p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap foot">
+    <div>
+      <span class="wm big"><b>DENNO</b><i>BUTCHERY CHOKAA</i></span>
+      Chokaa, Nairobi, Kenya<br>
+      Near the Kilimall office<br>
+      Open Monday to Sunday, 8:00 a.m. to 11:00 p.m.<br>
+      <a href="tel:+254795410514">0795410514</a><br>
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Kilimall+office%2C+Chokaa%2C+Nairobi%2C+Kenya" target="_blank" rel="noopener">Get directions on Google Maps</a>
+    </div>
+    <nav aria-label="Footer">
+      <a href="#home">Home</a> <a href="#meat">Our Meat</a> <a href="#about">About</a> <a href="#contact">Contact</a> <a href="#app">Get the App</a>
+    </nav>
+    <p>&copy; <span id="year">2026</span> Denno Butchery Chokaa. All rights reserved.</p>
+  </div>
+</footer>
+
+<a id="cartPill" class="cart-pill" href="#basket" hidden>Your order <span id="cartCount">0</span></a>
+
+<script src="script.js"></script>
+</body>
+</html>
